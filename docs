@@ -1,0 +1,4 @@
+---- Project setup -----
+1.Deleted unwanted file from app,components,constants
+2.Added _layut.jsx file in app folder
+3.Created Index file in app that will be entry point for our app
