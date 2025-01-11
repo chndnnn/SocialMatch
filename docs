@@ -2,3 +2,7 @@
 1.Deleted unwanted file from app,components,constants
 2.Added _layut.jsx file in app folder
 3.Created Index file in app that will be entry point for our app
+
+------- Icons --------------
+1.For Icons we are use https://hugeicons.com/
+2. npm i react-native-svg
