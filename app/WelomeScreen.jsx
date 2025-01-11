@@ -1,8 +1,11 @@
 const { useRouter } = require("expo-router");
+import { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import Laoding from "../components/Loading";
 
 const WelomeScreen = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   function onLoginPress() {
     router.push({ pathname: "/login" });
   }
@@ -24,7 +27,11 @@ const WelomeScreen = () => {
         </View>
         <View className="flex items-center ">
           <TouchableOpacity className="bg-green-500 w-[80%] mb-1 flex items-center py-3 rounded">
-            <Text className="text-white tracking-wide">Getting Started</Text>
+            {!loading ? (
+              <Text className="text-white tracking-wide">Getting Started</Text>
+            ) : (
+              <Laoding size="small" color="green" />
+            )}
           </TouchableOpacity>
           <View className="flex flex-row gap-1">
             <Text>Already have an account?</Text>
