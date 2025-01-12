@@ -1,16 +1,17 @@
-import { Text, TextInput, View } from "react-native";
+import { TextInput, View } from "react-native";
 import Icons from "../assets/Icons/Index";
 
-const CustomInput = () => {
+const CustomInput = ({ icon = "HomeIcon", secureTextEntry = false }) => {
   return (
-    <View className="w-full bg-gray-400 gap-2 p-2 flex flex-row items-center rounded-full border border-gray-500">
-      <View className="flex-shrink bg-neutral-700">
-        <Icons name={"HomeIcon"} />
+    <View className="w-full border border-gray-400 rounded-xl gap-2 p-2 flex flex-row items-center">
+      <View className="flex-shrink bg-neutral-700 ">
+        <Icons name={icon} />
       </View>
       <TextInput
         className="flex-1 text-white bg-neutral-700"
         placeholder="Type here"
         placeholderTextColor="gray"
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );

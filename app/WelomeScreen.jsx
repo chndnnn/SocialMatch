@@ -1,7 +1,7 @@
 const { useRouter } = require("expo-router");
 import { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import Laoding from "../components/Loading";
+import CustomButton from "../components/CustomButton";
 
 const WelomeScreen = () => {
   const router = useRouter();
@@ -26,13 +26,7 @@ const WelomeScreen = () => {
           </View>
         </View>
         <View className="flex items-center ">
-          <TouchableOpacity className="bg-green-500 w-[80%] mb-1 flex items-center py-3 rounded">
-            {!loading ? (
-              <Text className="text-white tracking-wide">Getting Started</Text>
-            ) : (
-              <Laoding size="small" color="green" />
-            )}
-          </TouchableOpacity>
+          <CustomButton loading={loading} name={"Getting Started"} />
           <View className="flex flex-row gap-1">
             <Text>Already have an account?</Text>
             <TouchableOpacity onPress={onLoginPress}>

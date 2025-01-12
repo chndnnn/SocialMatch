@@ -3,6 +3,7 @@ import Icons from "../assets/Icons/Index";
 import ScreenWrapper from "../components/ScreenWraper";
 import { Pressable, Text, View } from "react-native";
 import CustomInput from "../components/CustomInput";
+import CustomButton from "../components/CustomButton";
 
 const Login = () => {
   const router = useRouter();
@@ -24,8 +25,9 @@ const Login = () => {
           </View>
           <View className="flex-1 border border-red-500">
             <Text>Please Login to continue</Text>
-            <CustomInput />
-            <CustomInput />
+            <CustomInput icon={"Email"} />
+            <CustomInput icon={"Password"} secureTextEntry={true} />
+            <CustomButton name={"Login"} />
           </View>
         </View>
       </View>
