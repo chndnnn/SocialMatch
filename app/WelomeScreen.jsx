@@ -28,6 +28,7 @@ const WelomeScreen = () => {
         </View>
         <View className="flex items-center ">
           <CustomButton loading={loading} name={"Getting Started"} />
+
           <View className="flex flex-row gap-1">
             <Text>Already have an account?</Text>
             <TouchableOpacity onPress={onLoginPress}>

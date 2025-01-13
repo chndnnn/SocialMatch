@@ -25,9 +25,20 @@ const Login = () => {
           </View>
           <View className="flex-1 mt-10 items-center gap-5 ">
             <Text className="">Please Login to continue</Text>
-            <CustomInput icon={"Email"} />
-            <CustomInput icon={"Password"} secureTextEntry={true} />
+            <CustomInput icon={"Email"} placeholder={"Email"} />
+            <CustomInput
+              icon={"Password"}
+              placeholder={"Password"}
+              secureTextEntry={true}
+              viewPass={true}
+            />
+            <Text className="text-blue-500">Forgot Password?</Text>
             <CustomButton name={"Login"} />
+
+            <View className="flex flex-row gap-1">
+              <Text>Dont have acount?</Text>
+              <Text className="text-blue-500">Create one</Text>
+            </View>
           </View>
         </View>
       </View>
