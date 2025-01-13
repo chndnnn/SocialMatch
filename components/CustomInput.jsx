@@ -7,6 +7,8 @@ const CustomInput = ({
   secureTextEntry = false,
   viewPass,
   placeholder,
+  value,
+  onChange,
 }) => {
   const [secure, setSecure] = useState();
   useEffect(() => {
@@ -21,7 +23,9 @@ const CustomInput = ({
         className="flex-1"
         placeholder={placeholder || "Type here..."}
         placeholderTextColor="gray"
+        value={value}
         secureTextEntry={secure}
+        onChange={onChange}
       />
       {viewPass && (
         <View className="flex-shrink ">

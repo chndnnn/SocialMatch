@@ -2,7 +2,6 @@ const { useRouter } = require("expo-router");
 import { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import CustomButton from "../components/CustomButton";
-import Laoding from "../components/Loading";
 
 const WelomeScreen = () => {
   const router = useRouter();
