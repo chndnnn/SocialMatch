@@ -4,7 +4,7 @@ import ScreenWrapper from "../components/ScreenWraper";
 import { Pressable, Text, TextInput, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Login = () => {
   const router = useRouter();
@@ -15,6 +15,7 @@ const Login = () => {
     console.log(email);
     console.log(password);
   }
+
   return (
     <ScreenWrapper>
       <View className="flex-1  p-2">

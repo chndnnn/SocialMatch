@@ -11,6 +11,7 @@ const Signup = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
+
   return (
     <ScreenWrapper>
       <View className="flex-1  p-2">
@@ -30,7 +31,7 @@ const Signup = () => {
           <View className="flex-1 mt-10 items-center gap-5 ">
             <Text className="">Please fill details to create an account</Text>
             <CustomInput
-              icon={"Back"}
+              icon={"User"}
               placeholder={"Username"}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
