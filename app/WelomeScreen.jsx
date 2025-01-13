@@ -26,8 +26,11 @@ const WelomeScreen = () => {
           </View>
         </View>
         <View className="flex items-center ">
-          <CustomButton loading={loading} name={"Getting Started"} />
-
+          <CustomButton
+            loading={loading}
+            name={"Getting Started"}
+            onClick={() => router.push({ pathname: "/Signup" })}
+          />
           <View className="flex flex-row gap-1">
             <Text>Already have an account?</Text>
             <TouchableOpacity onPress={onLoginPress}>

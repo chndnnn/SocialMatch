@@ -1,20 +1,16 @@
 import { useRouter } from "expo-router";
 import Icons from "../assets/Icons/Index";
 import ScreenWrapper from "../components/ScreenWraper";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const Login = () => {
+const Signup = () => {
   const router = useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
-  function onloginClick() {
-    console.log(email);
-    console.log(password);
-  }
+  const [username, setUsername] = useState();
   return (
     <ScreenWrapper>
       <View className="flex-1  p-2">
@@ -28,11 +24,17 @@ const Login = () => {
         </View>
         <View className=" flex-1 ">
           <View className="flex flex-col gap-2">
-            <Text className="font-bold text-4xl">Hey,</Text>
-            <Text className="font-bold text-4xl">Welcome back!</Text>
+            <Text className="font-bold text-4xl">Let's</Text>
+            <Text className="font-bold text-4xl">Get Started</Text>
           </View>
           <View className="flex-1 mt-10 items-center gap-5 ">
-            <Text className="">Please Login to continue</Text>
+            <Text className="">Please fill details to create an account</Text>
+            <CustomInput
+              icon={"Back"}
+              placeholder={"Username"}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
             <CustomInput
               icon={"Email"}
               placeholder={"Email"}
@@ -48,12 +50,11 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Text className="text-blue-500">Forgot Password?</Text>
-            <CustomButton name={"Login"} onClick={onloginClick} />
-
+            <CustomButton name={"Signup"} />
             <View className="flex flex-row gap-1">
-              <Text>Dont have acount?</Text>
-              <Pressable onPress={() => router.push("/Signup")}>
-                <Text className="text-blue-500">Create one</Text>
+              <Text>Already have an account?</Text>
+              <Pressable onPress={() => router.push("/login")}>
+                <Text className="text-blue-500">Login</Text>
               </Pressable>
             </View>
           </View>
@@ -63,4 +64,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
