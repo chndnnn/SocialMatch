@@ -5,6 +5,7 @@ import HomeIcon from "../assets/Icons/HomeIcon";
 import Icons from "../assets/Icons/Index";
 import { useState } from "react";
 import Laoding from "../components/Loading";
+import CustomButton from "../components/CustomButton";
 
 const Index = () => {
   const router = useRouter();
@@ -12,12 +13,11 @@ const Index = () => {
 
   return (
     <ScreenWrapper>
-      <View>
-        <Text onPress={() => router.push({ pathname: "/WelomeScreen" })}>
-          Welcome
-          <Icons name={"HomeIcon"} />
-          <Icons name={"Back"} />
-        </Text>
+      <View className="flex-1 justify-center items-center">
+        <CustomButton
+          name={"Click"}
+          onClick={() => router.push({ pathname: "/WelomeScreen" })}
+        />
 
         {/* This code is only to resolve the error facing where custom component style is not visible */}
         {show && (
