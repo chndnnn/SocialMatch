@@ -1,7 +1,6 @@
 import { useRouter } from "expo-router";
-import { Button, Image, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import ScreenWrapper from "../components/ScreenWraper";
-import HomeIcon from "../assets/Icons/HomeIcon";
 import Icons from "../assets/Icons/Index";
 import { useState } from "react";
 import Laoding from "../components/Loading";

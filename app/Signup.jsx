@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import Icons from "../assets/Icons/Index";
 import ScreenWrapper from "../components/ScreenWraper";
-import { Pressable, Text, View } from "react-native";
+import { Alert, Pressable, Text, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useState } from "react";
@@ -11,6 +11,12 @@ const Signup = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
+
+  function onSignupClick() {
+    if (!email && !password && !username) {
+      Alert.alert("Signup", "Please fill all the fields");
+    }
+  }
 
   return (
     <ScreenWrapper>
@@ -28,7 +34,7 @@ const Signup = () => {
             <Text className="font-bold text-4xl">Let's</Text>
             <Text className="font-bold text-4xl">Get Started</Text>
           </View>
-          <View className="flex-1 mt-10 items-center gap-5 ">
+          <View className="flex-1 mt-10 items-center gap-7">
             <Text className="">Please fill details to create an account</Text>
             <CustomInput
               icon={"User"}
@@ -51,7 +57,7 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Text className="text-blue-500">Forgot Password?</Text>
-            <CustomButton name={"Signup"} />
+            <CustomButton onClick={onSignupClick} name={"Signup"} />
             <View className="flex flex-row gap-1">
               <Text>Already have an account?</Text>
               <Pressable onPress={() => router.push("/login")}>

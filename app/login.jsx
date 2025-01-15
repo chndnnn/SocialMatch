@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import Icons from "../assets/Icons/Index";
 import ScreenWrapper from "../components/ScreenWraper";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Alert, Pressable, Text, TextInput, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useState } from "react";
@@ -12,8 +12,9 @@ const Login = () => {
   const [password, setPassword] = useState();
 
   function onloginClick() {
-    console.log(email);
-    console.log(password);
+    if (!email && !password) {
+      Alert.alert("Login", "Please fill all the fields");
+    }
   }
 
   return (

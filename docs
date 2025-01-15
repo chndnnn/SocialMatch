@@ -6,3 +6,10 @@
 ------- Icons --------------
 1.For Icons we are use https://hugeicons.com/
 2. npm i react-native-svg
+
+-------- Superbase setup ------------------
+1.https://supabase.com/ 
+2.new project 
+3. project name (supa-HelloVoice)
+4. create a strong db password 
+5. create
