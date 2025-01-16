@@ -1,0 +1,4 @@
+export const YOUR_REACT_NATIVE_SUPABASE_URL =
+  "https://pmgevhkcenbgruuwrtww.supabase.co";
+export const YOUR_REACT_NATIVE_SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtZ2V2aGtjZW5iZ3J1dXdydHd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY5NTc3ODUsImV4cCI6MjA1MjUzMzc4NX0.BJULLQ5UebwLD7rMWtspiF79WA4eV9nnCPu3uroGfd4";

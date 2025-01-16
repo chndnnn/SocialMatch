@@ -25,7 +25,7 @@ const CustomInput = ({
         placeholderTextColor="gray"
         value={value}
         secureTextEntry={secure}
-        onChange={onChange}
+        onChangeText={onChange}
       />
       {viewPass && (
         <View className="flex-shrink ">

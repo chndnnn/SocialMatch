@@ -12,4 +12,5 @@
 2.new project 
 3. project name (supa-HelloVoice)
 4. create a strong db password 
-5. create
+5. create (We have done the setup)
+6. https://supabase.com/docs/guides/auth/quickstarts/react-native (this link will give us the guide how we can setup up authentication)

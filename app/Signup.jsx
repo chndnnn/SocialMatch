@@ -5,17 +5,31 @@ import { Alert, Pressable, Text, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useState } from "react";
+import { supabase } from "../lib/supabase";
 
 const Signup = () => {
   const router = useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
+  const [lodaing, setLoading] = useState(false);
 
-  function onSignupClick() {
+  async function onSignupClick() {
+    console.log(email, password, username);
     if (!email && !password && !username) {
       Alert.alert("Signup", "Please fill all the fields");
+      return;
     }
+    setLoading(true);
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
+    setLoading(false);
+    if (!error) Alert.alert("Sign Up", "Successfully signedup");
   }
 
   return (
@@ -40,13 +54,13 @@ const Signup = () => {
               icon={"User"}
               placeholder={"Username"}
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e)}
             />
             <CustomInput
               icon={"Email"}
               placeholder={"Email"}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e)}
             />
             <CustomInput
               icon={"Password"}
@@ -54,10 +68,14 @@ const Signup = () => {
               placeholder={"Password"}
               secureTextEntry={true}
               viewPass={true}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e)}
             />
             <Text className="text-blue-500">Forgot Password?</Text>
-            <CustomButton onClick={onSignupClick} name={"Signup"} />
+            <CustomButton
+              onClick={onSignupClick}
+              name={"Signup"}
+              loading={lodaing}
+            />
             <View className="flex flex-row gap-1">
               <Text>Already have an account?</Text>
               <Pressable onPress={() => router.push("/login")}>

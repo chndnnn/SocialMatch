@@ -39,7 +39,7 @@ const Login = () => {
               icon={"Email"}
               placeholder={"Email"}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e)}
             />
             <CustomInput
               icon={"Password"}
@@ -47,7 +47,7 @@ const Login = () => {
               placeholder={"Password"}
               secureTextEntry={true}
               viewPass={true}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e)}
             />
             <Text className="text-blue-500">Forgot Password?</Text>
             <CustomButton name={"Login"} onClick={onloginClick} />
