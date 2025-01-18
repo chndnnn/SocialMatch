@@ -5,15 +5,30 @@ import { Alert, Pressable, Text, TextInput, View } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useState } from "react";
+import { supabase } from "../lib/supabase";
 
 const Login = () => {
   const router = useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [lodaing, setLoading] = useState(false);
 
-  function onloginClick() {
+  async function onloginClick() {
     if (!email && !password) {
       Alert.alert("Login", "Please fill all the fields");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+    if (error) {
+      setLoading(false);
+      Alert.alert("Login", error.message);
+    } else {
+      setLoading(false);
+      Alert.alert("Login", "Login succcessfull");
     }
   }
 
@@ -50,7 +65,11 @@ const Login = () => {
               onChange={(e) => setPassword(e)}
             />
             <Text className="text-blue-500">Forgot Password?</Text>
-            <CustomButton name={"Login"} onClick={onloginClick} />
+            <CustomButton
+              name={"Login"}
+              loading={lodaing}
+              onClick={onloginClick}
+            />
 
             <View className="flex flex-row gap-1">
               <Text>Dont have acount?</Text>

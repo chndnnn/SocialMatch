@@ -15,7 +15,6 @@ const Signup = () => {
   const [lodaing, setLoading] = useState(false);
 
   async function onSignupClick() {
-    console.log(email, password, username);
     if (!email && !password && !username) {
       Alert.alert("Signup", "Please fill all the fields");
       return;
@@ -27,6 +26,11 @@ const Signup = () => {
     } = await supabase.auth.signUp({
       email: email,
       password: password,
+      options: {
+        data: {
+          name: username,
+        },
+      },
     });
     setLoading(false);
     if (!error) Alert.alert("Sign Up", "Successfully signedup");

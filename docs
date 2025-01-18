@@ -14,3 +14,4 @@
 4. create a strong db password 
 5. create (We have done the setup)
 6. https://supabase.com/docs/guides/auth/quickstarts/react-native (this link will give us the guide how we can setup up authentication)
+7. https://supabase.com/docs/guides/auth/managing-user-data (for user configurations) will create a trigger that whenever user is create in auth user table it will automatically create user in public auth table
