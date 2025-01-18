@@ -26,9 +26,6 @@ const Login = () => {
     if (error) {
       setLoading(false);
       Alert.alert("Login", error.message);
-    } else {
-      setLoading(false);
-      Alert.alert("Login", "Login succcessfull");
     }
   }
 

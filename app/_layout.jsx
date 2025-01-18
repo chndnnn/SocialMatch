@@ -14,12 +14,15 @@ const _layout = () => {
 
 const MainLayout = () => {
   const router = useRouter();
-  const { user } = authState();
+  const { user, setAuth } = authState();
   useEffect(() => {
     console.log(user);
     supabase.auth.onAuthStateChange((_event, session) => {
       if (session) {
+        setAuth(session.user.id);
         router.replace("/home");
+      } else {
+        router.replace("/welomeScreen");
       }
     });
   }, []);
