@@ -22,7 +22,7 @@ const MainLayout = () => {
         setAuth(session.user.id);
         router.replace("/home");
       } else {
-        router.replace("/welomeScreen");
+        router.replace("/login");
       }
     });
   }, []);

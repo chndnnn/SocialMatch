@@ -13,10 +13,7 @@ const Index = () => {
   return (
     <ScreenWrapper>
       <View className="flex-1 justify-center items-center">
-        <CustomButton
-          name={"Click"}
-          onClick={() => router.push({ pathname: "/WelomeScreen" })}
-        />
+        <Laoding color="green" />
 
         {/* This code is only to resolve the error facing where custom component style is not visible */}
         {show && (
