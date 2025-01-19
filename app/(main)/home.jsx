@@ -4,6 +4,7 @@ import { authState } from "../../Context/authContext";
 import { useRouter } from "expo-router";
 import ScreenWrapper from "../../components/ScreenWraper";
 import { supabase } from "../../lib/supabase";
+import { useEffect } from "react";
 
 const Home = () => {
   const { user, setAuth } = authState();
@@ -15,13 +16,17 @@ const Home = () => {
       Alert.alert("Signout", "Error while signing out");
     }
   }
+
+  useEffect(() => {
+    console.log(user);
+  }, []);
   return (
     <ScreenWrapper>
       <View>
         <Text>Home</Text>
         <Pressable onPress={() => onLogutClick()}>
           <Text>Logout</Text>
-          <Text>{user}</Text>
+          <Text>{user.name}</Text>
         </Pressable>
       </View>
     </ScreenWrapper>
