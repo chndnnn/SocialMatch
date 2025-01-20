@@ -4,10 +4,12 @@ import { authState } from "../../Context/authContext";
 import { useRouter } from "expo-router";
 import ScreenWrapper from "../../components/ScreenWraper";
 import { supabase } from "../../lib/supabase";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CustomInput from "../../components/CustomInput";
 
 const Home = () => {
   const { user, setAuth } = authState();
+  const [phone, setPhone] = useState();
   const router = useRouter();
   function onLogutClick() {
     setAuth(null);
@@ -17,17 +19,20 @@ const Home = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(user);
-  }, []);
   return (
     <ScreenWrapper>
       <View>
         <Text>Home</Text>
         <Pressable onPress={() => onLogutClick()}>
           <Text>Logout</Text>
-          <Text>{user.name}</Text>
+          <Text>{user?.name}</Text>
         </Pressable>
+        <CustomInput
+          icon={"Phone"}
+          placeholder={"Phone"}
+          value={phone}
+          onChange={(e) => setPhone(e)}
+        />
       </View>
     </ScreenWrapper>
   );

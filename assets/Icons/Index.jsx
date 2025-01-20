@@ -3,6 +3,7 @@ import Email from "./EmailIcons";
 import Favourite from "./Favourites";
 import HomeIcon from "./HomeIcon";
 import Password from "./Password";
+import Phone from "./Phone";
 import User from "./User";
 import ViewOff from "./ViewOff";
 import ViewOn from "./ViewOn";
@@ -16,6 +17,7 @@ let allIcons = {
   ViewOn: ViewOn,
   User: User,
   Favourite: Favourite,
+  Phone: Phone,
 };
 
 const Icons = ({ name }) => {

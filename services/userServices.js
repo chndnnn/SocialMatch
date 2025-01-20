@@ -14,3 +14,18 @@ export const getuserData = async (userid)=>{
         return{status:true,data}
     }
 }
+
+export const updateData = async (data)=>{
+    const {phone} = data
+    const { error } = await supabase
+  .from('users')
+  .update({ name: 'Australia',phone, })
+  .eq('id', 1)
+
+  if(!error){
+    console.log("Updated")
+  }else{
+    console.log("Error : ",error.message)
+  }
+
+}
