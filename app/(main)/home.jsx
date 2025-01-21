@@ -19,6 +19,18 @@ const Home = () => {
     }
   }
 
+  async function onUpdatePress() {
+    if (phone) {
+      data = {
+        phone,
+      };
+      let res = await updateData(data);
+      if (res.success) {
+        Alert.alert("Updated successfully");
+      }
+    }
+  }
+
   return (
     <ScreenWrapper>
       <View>
@@ -33,6 +45,9 @@ const Home = () => {
           value={phone}
           onChange={(e) => setPhone(e)}
         />
+        <Pressable onPress={onUpdatePress}>
+          <Text>update</Text>
+        </Pressable>
       </View>
     </ScreenWrapper>
   );

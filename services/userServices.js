@@ -24,8 +24,10 @@ export const updateData = async (data)=>{
 
   if(!error){
     console.log("Updated")
+    return {success:true}
   }else{
     console.log("Error : ",error.message)
+    return {success:false}
   }
 
 }
