@@ -4,10 +4,8 @@ import ScreenWrapper from "../components/ScreenWraper";
 import Icons from "../assets/Icons/Index";
 import { useState } from "react";
 import Laoding from "../components/Loading";
-import CustomButton from "../components/CustomButton";
 
 const Index = () => {
-  const router = useRouter();
   const [show, setShow] = useState(false);
 
   return (
